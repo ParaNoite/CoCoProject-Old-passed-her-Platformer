@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://mhgjvfoy6yvw"]
+
+[ext_resource type="PackedScene" uid="uid://cd30yerqvrf5s" path="res://Scenes/Player/Player.tscn" id="2_02qk3"]
+[ext_resource type="PackedScene" uid="uid://bnx0kqux4qwor" path="res://Scenes/tile.tscn" id="2_oltiy"]
+[ext_resource type="PackedScene" uid="uid://htqylqy72els" path="res://Scenes/spike.tscn" id="3_02qk3"]
+
+[node name="Node2D" type="Node2D" unique_id=1818193190]
+
+[node name="Player" parent="." unique_id=235331424 instance=ExtResource("2_02qk3")]
+
+[node name="FakeTileMap" type="Node2D" parent="." unique_id=783401892]
+
+[node name="tile" parent="FakeTileMap" unique_id=391675755 instance=ExtResource("2_oltiy")]
+position = Vector2(33.22, 258.565)
+scale = Vector2(20, 1)
+
+[node name="tile2" parent="FakeTileMap" unique_id=1310219272 instance=ExtResource("2_oltiy")]
+position = Vector2(-296, 153)
+scale = Vector2(3.015, 1)
+
+[node name="Spike" parent="FakeTileMap" unique_id=1213218182 instance=ExtResource("3_02qk3")]
+position = Vector2(481, 179.99998)

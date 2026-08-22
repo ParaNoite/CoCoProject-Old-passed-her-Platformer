@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://htqylqy72els"]
+
+[ext_resource type="Texture2D" uid="uid://cffakbmk61ysn" path="res://icon.svg" id="1_1hotg"]
+[ext_resource type="PackedScene" uid="uid://dn7lpnijm1ngn" path="res://Scenes/death_area_2d.tscn" id="2_2mnih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhxds"]
+size = Vector2(100, 100)
+
+[node name="Spike" type="Sprite2D" unique_id=1213218182]
+rotation = -1.6283922
+scale = Vector2(0.85, 1)
+skew = -1.3369222
+texture = ExtResource("1_1hotg")
+
+[node name="DeathArea2D" parent="." unique_id=1654596116 instance=ExtResource("2_2mnih")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea2D" unique_id=1022600793]
+shape = SubResource("RectangleShape2D_fhxds")
