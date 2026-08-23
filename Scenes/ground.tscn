@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dn7lpnijm1ngn" path="res://Scenes/death_area_2d.tscn" id="4_kv0ry"]
 [ext_resource type="PackedScene" uid="uid://cvhgw7gt8lken" path="res://Scenes/Player_UI.tscn" id="4_s6h8e"]
 [ext_resource type="PackedScene" uid="uid://cle8csm1c1f0c" path="res://Scenes/coin.tscn" id="6_ribny"]
+[ext_resource type="AudioStream" uid="uid://dyyxub45caq2b" path="res://Assets/合众条顿牢国王A7V - 《老牧师の小曲》-GOOD BOY.mp3" id="7_rjkga"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ribny"]
 
@@ -34,6 +35,9 @@ shape = SubResource("WorldBoundaryShape2D_ribny")
 
 [node name="Control" parent="." unique_id=1676749883 instance=ExtResource("4_s6h8e")]
 
-[node name="Coin" parent="." unique_id=225513912 node_paths=PackedStringArray("UI") instance=ExtResource("6_ribny")]
+[node name="Coin" parent="." unique_id=225513912 instance=ExtResource("6_ribny")]
 position = Vector2(287, 39)
-UI = NodePath("../Control")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=452735341]
+stream = ExtResource("7_rjkga")
+autoplay = true
