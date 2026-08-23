@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cd30yerqvrf5s" path="res://Scenes/Player/Player.tscn" id="2_02qk3"]
 [ext_resource type="PackedScene" uid="uid://bnx0kqux4qwor" path="res://Scenes/tile.tscn" id="2_oltiy"]
 [ext_resource type="PackedScene" uid="uid://htqylqy72els" path="res://Scenes/spike.tscn" id="3_02qk3"]
+[ext_resource type="PackedScene" uid="uid://dn7lpnijm1ngn" path="res://Scenes/death_area_2d.tscn" id="4_kv0ry"]
+[ext_resource type="PackedScene" uid="uid://cvhgw7gt8lken" path="res://Scenes/Player_UI.tscn" id="4_s6h8e"]
+[ext_resource type="PackedScene" uid="uid://cle8csm1c1f0c" path="res://Scenes/coin.tscn" id="6_ribny"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ribny"]
 
 [node name="Node2D" type="Node2D" unique_id=1818193190]
 
@@ -12,7 +17,7 @@
 
 [node name="tile" parent="FakeTileMap" unique_id=391675755 instance=ExtResource("2_oltiy")]
 position = Vector2(33.22, 258.565)
-scale = Vector2(20, 1)
+scale = Vector2(9.25, 1)
 
 [node name="tile2" parent="FakeTileMap" unique_id=1310219272 instance=ExtResource("2_oltiy")]
 position = Vector2(-296, 153)
@@ -20,3 +25,15 @@ scale = Vector2(3.015, 1)
 
 [node name="Spike" parent="FakeTileMap" unique_id=1213218182 instance=ExtResource("3_02qk3")]
 position = Vector2(481, 179.99998)
+
+[node name="DeathArea2D" parent="FakeTileMap" unique_id=1654596116 instance=ExtResource("4_kv0ry")]
+position = Vector2(23.89, 897.795)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FakeTileMap/DeathArea2D" unique_id=1225946991]
+shape = SubResource("WorldBoundaryShape2D_ribny")
+
+[node name="Control" parent="." unique_id=1676749883 instance=ExtResource("4_s6h8e")]
+
+[node name="Coin" parent="." unique_id=225513912 node_paths=PackedStringArray("UI") instance=ExtResource("6_ribny")]
+position = Vector2(287, 39)
+UI = NodePath("../Control")

@@ -6,5 +6,6 @@ extends Area2D
 #这个是area2d的body_entered信号的回调函数
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):#假如是玩家组的（group要在编辑器里设置）
-		body.queue_free()#将玩家从场景中移除
+		body.player_died.emit()#先通知订阅者（UI等）
+		body.queue_free()#再将玩家从场景中移除
 		print("Player has died!")#打印玩家死亡

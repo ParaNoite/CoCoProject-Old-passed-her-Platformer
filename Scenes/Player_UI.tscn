@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cvhgw7gt8lken"]
+
+[ext_resource type="Script" uid="uid://crpde0ws5ksnx" path="res://Scipts/Player_UI.gd" id="1_e0nwh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0nwh"]
+font_size = 106
+
+[sub_resource type="LabelSettings" id="LabelSettings_dnfhc"]
+font_size = 59
+
+[sub_resource type="LabelSettings" id="LabelSettings_wi8sc"]
+font_size = 119
+
+[node name="Control" type="Control" unique_id=1676749883]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=844358224 node_paths=PackedStringArray("game_over_ui", "num_coins_label")]
+script = ExtResource("1_e0nwh")
+game_over_ui = NodePath("VBoxContainer/Label")
+num_coins_label = NodePath("VBoxContainer/TopHBox/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=2047517290]
+custom_minimum_size = Vector2(1000, 500)
+offset_right = 137.0
+offset_bottom = 51.0
+
+[node name="TopHBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1225126047]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/TopHBox" unique_id=407960898]
+custom_minimum_size = Vector2(166.35, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_e0nwh")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/TopHBox" unique_id=1426662346]
+custom_minimum_size = Vector2(104.615, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/TopHBox" unique_id=1256301621]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "请输入文本"
+label_settings = SubResource("LabelSettings_dnfhc")
+
+[node name="CentreHBox" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1788657390]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/CentreHBox" unique_id=827911118]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/VBoxContainer/CentreHBox" unique_id=28355387]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1043270362]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+text = "巴哈哈哈哈哈
+你老牧师了你老牧师了你老牧师了你老牧师了你老牧师了你老牧师了你老牧师了你老牧师了"
+label_settings = SubResource("LabelSettings_wi8sc")

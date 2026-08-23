@@ -15,9 +15,15 @@ run/main_scene="uid://mhgjvfoy6yvw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://l8oo1kqektaf"
+EventBus="*uid://lvajsrqk8au4"
+
 [global_group]
 
 Player=""
+Coin=""
 
 [layer_names]
 

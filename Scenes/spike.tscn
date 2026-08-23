@@ -7,6 +7,8 @@
 size = Vector2(100, 100)
 
 [node name="Spike" type="Sprite2D" unique_id=1213218182]
+modulate = Color(1, 0, 0, 1)
+z_index = -1
 rotation = -1.6283922
 scale = Vector2(0.85, 1)
 skew = -1.3369222

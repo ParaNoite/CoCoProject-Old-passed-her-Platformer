@@ -6,6 +6,10 @@ extends CharacterBody2D
 #onready的变量会在ready函数里初始化，ready函数会在节点进入场景树时调用
 @onready var ani_player: AnimationPlayer = $AnimationPlayer#这个名字是编辑器那个
 
+signal player_died()#自定义信号，死亡时发射
+#ex：观察者模式，当跨节点通信，用signal,只在某特定事件触发，避免每帧都去检测
+
+
 func _ready() -> void:
 	#设置玩家组，方便在死亡区域检测
 	add_to_group("Player")#也可以直接在编辑器里设置
@@ -14,6 +18,7 @@ func _ready() -> void:
 	# 	if child is AnimatedSprite2D:
 	# 		ani_player = child
 	# 		break
+	
 
 
 
