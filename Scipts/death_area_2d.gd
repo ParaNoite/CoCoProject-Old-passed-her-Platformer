@@ -16,6 +16,7 @@ func _on_body_entered(body: Node) -> void:
 		timer.timeout.connect(_on_timer_timeout)#连接计时器的timeout信号到回调函数
 		add_child(timer)#将计时器添加到当前节点下
 		timer.start()#启动计时器
+		Engine.time_scale = 0.5#设置游戏时间缩放为0.5，慢动作效果
 
 
 func _on_timer_timeout() -> void:
