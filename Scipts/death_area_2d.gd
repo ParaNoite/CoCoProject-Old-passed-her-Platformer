@@ -9,3 +9,18 @@ func _on_body_entered(body: Node) -> void:
 		body.player_died.emit()#先通知订阅者（UI等）
 		body.queue_free()#再将玩家从场景中移除
 		print("Player has died!")#打印玩家死亡
+		#创建一个计时器（临时）
+		var timer = Timer.new()#创建一个计时器
+		timer.wait_time = 2.0#设置计时器的等待时间为2
+		timer.one_shot = true#设置计时器为单次计时
+		timer.timeout.connect(_on_timer_timeout)#连接计时器的timeout信号到回调函数
+		add_child(timer)#将计时器添加到当前节点下
+		timer.start()#启动计时器
+
+
+func _on_timer_timeout() -> void:
+	print("Timer timeout!")
+	for timer in get_children():
+		if timer is Timer:
+			timer.queue_free()#遍历删除计时器
+	get_tree().reload_current_scene()#重新加载当前场景
