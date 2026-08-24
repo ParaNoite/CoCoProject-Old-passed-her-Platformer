@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://doil0dkjdcniy"]
+
+[ext_resource type="PackedScene" uid="uid://dn7lpnijm1ngn" path="res://Scenes/death_area_2d.tscn" id="1_1f0kj"]
+[ext_resource type="Script" uid="uid://wim04dd8lh4o" path="res://Scipts/enemy.gd" id="1_afpow"]
+[ext_resource type="Texture2D" uid="uid://cffakbmk61ysn" path="res://icon.svg" id="2_afpow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_287tu"]
+size = Vector2(84, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0830c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_afpow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghaa6"]
+size = Vector2(77, 52)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1627722246]
+script = ExtResource("1_afpow")
+speed = 20.0
+
+[node name="DeathArea2D" parent="." unique_id=1654596116 instance=ExtResource("1_1f0kj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea2D" unique_id=403835467]
+shape = SubResource("RectangleShape2D_287tu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1679846745]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.7, 0.48)
+sprite_frames = SubResource("SpriteFrames_0830c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2059206224]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_ghaa6")

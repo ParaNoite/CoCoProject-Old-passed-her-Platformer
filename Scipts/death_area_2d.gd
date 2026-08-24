@@ -24,4 +24,5 @@ func _on_timer_timeout() -> void:
 	for timer in get_children():
 		if timer is Timer:
 			timer.queue_free()#遍历删除计时器
+	Engine.time_scale = 1.0#恢复游戏时间缩放为1.0
 	get_tree().reload_current_scene()#重新加载当前场景

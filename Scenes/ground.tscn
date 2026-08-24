@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvhgw7gt8lken" path="res://Scenes/Player_UI.tscn" id="4_s6h8e"]
 [ext_resource type="PackedScene" uid="uid://cle8csm1c1f0c" path="res://Scenes/coin.tscn" id="6_ribny"]
 [ext_resource type="AudioStream" uid="uid://dyyxub45caq2b" path="res://Assets/合众条顿牢国王A7V - 《老牧师の小曲》-GOOD BOY.mp3" id="7_rjkga"]
+[ext_resource type="PackedScene" uid="uid://doil0dkjdcniy" path="res://Scenes/enemy.tscn" id="8_jjp1w"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ribny"]
 
@@ -41,3 +42,7 @@ position = Vector2(287, 39)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=452735341]
 stream = ExtResource("7_rjkga")
 autoplay = true
+
+[node name="Enemy" parent="." unique_id=1627722246 instance=ExtResource("8_jjp1w")]
+position = Vector2(-903, -331)
+speed = 400.0
