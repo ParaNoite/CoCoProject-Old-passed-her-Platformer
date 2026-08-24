@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghaa6"]
 size = Vector2(77, 52)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1627722246]
+[node name="Enemy" type="CharacterBody2D" unique_id=1627722246 groups=["Enemy"]]
 script = ExtResource("1_afpow")
 speed = 20.0
 

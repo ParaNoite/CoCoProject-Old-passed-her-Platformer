@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cm5vtciwr4ly3" path="res://Scipts/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://cffakbmk61ysn" path="res://icon.svg" id="1_s0eop"]
+[ext_resource type="PackedScene" uid="uid://uyvi7tv7pilg" path="res://Scenes/SwordComponent.tscn" id="3_h54ih"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ft8w5"]
 animations = [{
@@ -139,22 +140,29 @@ _data = {
 &"move": SubResource("Animation_ft8w5")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=235331424 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=235331424 node_paths=PackedStringArray("ani_sprite", "sword_component") groups=["Player"]]
 position = Vector2(-3, 0)
 collision_mask = 14
 script = ExtResource("1_ft8w5")
 speed = 400.0
 jump_velo = -600.0
 gravity = 1000
+ani_sprite = NodePath("AnimatedSprite2D")
+sword_component = NodePath("SwordComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1983023267]
 scale = Vector2(0.57, 1)
 sprite_frames = SubResource("SpriteFrames_ft8w5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2000577857]
+visible = false
 shape = SubResource("CapsuleShape2D_h54ih")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=182151004]
 libraries/ = SubResource("AnimationLibrary_h54ih")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=781457133]
+
+[node name="SwordComponent" parent="." unique_id=2127274587 instance=ExtResource("3_h54ih")]
+position = Vector2(29.88, 26.315)
+scale = Vector2(0.7249999, 0.72499996)

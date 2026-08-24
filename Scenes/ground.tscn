@@ -44,5 +44,6 @@ stream = ExtResource("7_rjkga")
 autoplay = true
 
 [node name="Enemy" parent="." unique_id=1627722246 instance=ExtResource("8_jjp1w")]
-position = Vector2(-903, -331)
-speed = 400.0
+position = Vector2(378, -44)
+collision_layer = 2
+speed = 200.0
